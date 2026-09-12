@@ -1,6 +1,7 @@
 # research-as-code-articles
 
-research-as-code サイトの記事本文（Markdown）を管理するリポジトリ。
+[research-as-code](https://d31ms51gntaaqd.cloudfront.net/) サイトの記事本文（Markdown）を管理するリポジトリ。
+（独自ドメイン設定後はそちらのURLに差し替え予定）
 
 ## 記事の書き方
 
