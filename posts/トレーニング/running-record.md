@@ -21,11 +21,10 @@ publishedAt: "2026-10-03"
 
 数年前は、ハーフマラソンを93分で走れていました(約4:24/km)。10kmを45分は、そのころの走力に戻すイメージです。
 
-## 今週のランニング
+## ランニング記録
 
-![今週のランニング記録](https://raw.githubusercontent.com/kajicchan/research-as-code-articles/main/posts/%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/running-record/charts/weekly-log.svg)
+![ランニング記録](https://raw.githubusercontent.com/kajicchan/research-as-code-articles/main/posts/%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/running-record/charts/weekly-log.svg)
 
-今週は7kmを41分04秒(5:52/km)でした。目標の4:30/kmまでは、ペースをあと1分22秒/km縮める必要があります。
 
 ## これから
 
