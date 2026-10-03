@@ -1,0 +1,15 @@
+{
+  "endpoint": "chart/bar",
+  "body": {
+    "title": "現在の最大重量(kg)",
+    "xLabel": "種目",
+    "yLabel": "重量(kg)",
+    "data": [
+      { "label": "ベンチプレス", "value": 95 },
+      { "label": "スクワット", "value": 125 },
+      { "label": "デッドリフト", "value": 140 }
+    ],
+    "width": 500,
+    "height": 300
+  }
+}
