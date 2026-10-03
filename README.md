@@ -28,7 +28,30 @@ posts/
   _template.md              # 新規記事のテンプレート（先頭 _ はビルド時に記事として扱わない）
   <カテゴリ名>/
     <slug>.md                # 記事本体。ディレクトリ名がカテゴリ、ファイル名がそのままURLのslugになる
+    <slug>/charts/
+      <name>.json             # 表・グラフのリクエスト定義（下記参照）
+      <name>.svg               # pushを検知して自動生成されるSVG（手で編集しない）
 ```
 
 カテゴリ名はディレクトリ名がそのまま表示名になる（例: `posts/スポーツ科学/`）。
 slug はカテゴリをまたいで一意にする（同じ slug のファイルが別カテゴリに存在しないこと）。
+
+## 表・グラフの埋め込み（useful-api連携）
+
+数値データを表やグラフのSVGにしたい場合、[useful-api](https://github.com/kajicchan/useful-api) を使う。
+
+1. `posts/<カテゴリ名>/<slug>/charts/<name>.json` に、呼び出すエンドポイントとリクエストボディを書く
+
+```json
+{
+  "endpoint": "table",
+  "body": { "title": "...", "rows": [["...", 1]] }
+}
+```
+
+`endpoint` は `table` / `chart/bar` / `chart/line` のいずれか（useful-apiのパスと一致させる）。
+
+2. mainにpushすると、GitHub Actions（`generate-charts.yml`）が `charts/` 配下の `.json` を見つけてuseful-apiを呼び出し、同名の `.svg` を生成してコミットし直す
+3. 生成された `.svg` の中身をコピーして、記事のMarkdown本文に貼り付ける（自動では埋め込まれない）。埋め込むときは、1行の`<svg>...</svg>`ではなく複数行のまま貼ること（1行だと段落`<p>`に巻き込まれてレイアウトが崩れる）
+
+この仕組みはAPIキーをGitHub Actionsのsecret（`USEFUL_API_KEY`）として登録しておく必要がある。

@@ -67,7 +67,28 @@ Lambda関数の中は「core(業務ロジック、HTTP非依存)→ adapter(HTTP
 
 返ってきたSVGをそのまま埋め込むとこうなります。
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" width="500" height="260" font-family="sans-serif" font-size="14"><rect x="0" y="0" width="500" height="260" fill="#ffffff"/><text x="250" y="20.666666666666668" text-anchor="middle" font-weight="bold" fill="#111111">種目別 重量(例)</text><rect x="0" y="32" width="500" height="28" fill="#f0f0f0"/><text x="6" y="50.666666666666664" font-weight="bold" fill="#111111">種目</text><text x="256" y="50.666666666666664" font-weight="bold" fill="#111111">重量(kg)</text><text x="6" y="98.00000000000001" text-anchor="start" fill="#111111">スクワット</text><text x="494" y="98.00000000000001" text-anchor="end" fill="#111111">100</text><text x="6" y="164.66666666666666" text-anchor="start" fill="#111111">ベンチプレス</text><text x="494" y="164.66666666666666" text-anchor="end" fill="#111111">70</text><text x="6" y="231.33333333333334" text-anchor="start" fill="#111111">デッドリフト</text><text x="494" y="231.33333333333334" text-anchor="end" fill="#111111">120</text><rect x="0" y="32" width="500" height="228" fill="none" stroke="#333333"/><line x1="0" y1="60" x2="500" y2="60" stroke="#cccccc"/><line x1="0" y1="126.66666666666667" x2="500" y2="126.66666666666667" stroke="#cccccc"/><line x1="0" y1="193.33333333333334" x2="500" y2="193.33333333333334" stroke="#cccccc"/><line x1="0" y1="260" x2="500" y2="260" stroke="#cccccc"/><line x1="0" y1="32" x2="500" y2="32" stroke="#333333"/><line x1="0" y1="32" x2="0" y2="260" stroke="#cccccc"/><line x1="250" y1="32" x2="250" y2="260" stroke="#cccccc"/><line x1="500" y1="32" x2="500" y2="260" stroke="#cccccc"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" width="500" height="260" font-family="sans-serif" font-size="14">
+<rect x="0" y="0" width="500" height="260" fill="#ffffff"/>
+<text x="250" y="20.666666666666668" text-anchor="middle" font-weight="bold" fill="#111111">種目別 重量(例)</text>
+<rect x="0" y="32" width="500" height="28" fill="#f0f0f0"/>
+<text x="6" y="50.666666666666664" font-weight="bold" fill="#111111">種目</text>
+<text x="256" y="50.666666666666664" font-weight="bold" fill="#111111">重量(kg)</text>
+<text x="6" y="98.00000000000001" text-anchor="start" fill="#111111">スクワット</text>
+<text x="494" y="98.00000000000001" text-anchor="end" fill="#111111">100</text>
+<text x="6" y="164.66666666666666" text-anchor="start" fill="#111111">ベンチプレス</text>
+<text x="494" y="164.66666666666666" text-anchor="end" fill="#111111">70</text>
+<text x="6" y="231.33333333333334" text-anchor="start" fill="#111111">デッドリフト</text>
+<text x="494" y="231.33333333333334" text-anchor="end" fill="#111111">120</text>
+<rect x="0" y="32" width="500" height="228" fill="none" stroke="#333333"/>
+<line x1="0" y1="60" x2="500" y2="60" stroke="#cccccc"/>
+<line x1="0" y1="126.66666666666667" x2="500" y2="126.66666666666667" stroke="#cccccc"/>
+<line x1="0" y1="193.33333333333334" x2="500" y2="193.33333333333334" stroke="#cccccc"/>
+<line x1="0" y1="260" x2="500" y2="260" stroke="#cccccc"/>
+<line x1="0" y1="32" x2="500" y2="32" stroke="#333333"/>
+<line x1="0" y1="32" x2="0" y2="260" stroke="#cccccc"/>
+<line x1="250" y1="32" x2="250" y2="260" stroke="#cccccc"/>
+<line x1="500" y1="32" x2="500" y2="260" stroke="#cccccc"/>
+</svg>
 
 折れ線グラフ(`POST /chart/line`)。送ったリクエストはこちら。
 

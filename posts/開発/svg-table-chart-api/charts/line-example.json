@@ -1,0 +1,16 @@
+{
+  "endpoint": "chart/line",
+  "body": {
+    "title": "週間走行距離(例)",
+    "xLabel": "週",
+    "yLabel": "距離(km)",
+    "data": [
+      { "label": "1週目", "value": 10 },
+      { "label": "2週目", "value": 15 },
+      { "label": "3週目", "value": 12 },
+      { "label": "4週目", "value": 20 }
+    ],
+    "width": 500,
+    "height": 260
+  }
+}
