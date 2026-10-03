@@ -7,7 +7,8 @@
     "data": [
       { "label": "ベンチプレス", "value": 95 },
       { "label": "スクワット", "value": 125 },
-      { "label": "デッドリフト", "value": 140 }
+      { "label": "デッドリフト", "value": 140 },
+      { "label": "合計", "value": 360 }
     ],
     "width": 500,
     "height": 300
