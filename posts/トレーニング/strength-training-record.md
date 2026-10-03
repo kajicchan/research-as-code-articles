@@ -27,7 +27,7 @@ Big3(スクワット・ベンチプレス・デッドリフト)の合計を400kg
 
 ## 筋トレの記録
 
-![筋トレ記録](https://raw.githubusercontent.com/kajicchan/research-as-code-articles/main/posts/%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/strength-training-record/charts/weekly-log.svg)
+![筋トレ記録](https://raw.githubusercontent.com/kajicchan/research-as-code-articles/main/posts/%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/strength-training-record/charts/log.svg)
 
 重量と回数は、セットごとにカンマ区切りで並べています。
 

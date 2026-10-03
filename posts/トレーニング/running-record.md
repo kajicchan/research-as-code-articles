@@ -23,7 +23,7 @@ publishedAt: "2026-10-03"
 
 ## ランニング記録
 
-![ランニング記録](https://raw.githubusercontent.com/kajicchan/research-as-code-articles/main/posts/%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/running-record/charts/weekly-log.svg)
+![ランニング記録](https://raw.githubusercontent.com/kajicchan/research-as-code-articles/main/posts/%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/running-record/charts/log.svg)
 
 
 ## これから
