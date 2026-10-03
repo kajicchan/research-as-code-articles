@@ -49,11 +49,45 @@ Lambda関数の中は「core(業務ロジック、HTTP非依存)→ adapter(HTTP
 
 実際にデプロイ済みのAPIを呼び出して生成したSVGです(このページにそのまま埋め込んでいます)。
 
-表(`POST /table`):
+表(`POST /table`)。送ったリクエストはこちら。
+
+```json
+{
+  "title": "種目別 重量(例)",
+  "headers": ["種目", "重量(kg)"],
+  "rows": [
+    ["スクワット", 100],
+    ["ベンチプレス", 70],
+    ["デッドリフト", 120]
+  ],
+  "width": 500,
+  "height": 260
+}
+```
+
+返ってきたSVGをそのまま埋め込むとこうなります。
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" width="500" height="260" font-family="sans-serif" font-size="14"><rect x="0" y="0" width="500" height="260" fill="#ffffff"/><text x="250" y="20.666666666666668" text-anchor="middle" font-weight="bold" fill="#111111">種目別 重量(例)</text><rect x="0" y="32" width="500" height="28" fill="#f0f0f0"/><text x="6" y="50.666666666666664" font-weight="bold" fill="#111111">種目</text><text x="256" y="50.666666666666664" font-weight="bold" fill="#111111">重量(kg)</text><text x="6" y="98.00000000000001" text-anchor="start" fill="#111111">スクワット</text><text x="494" y="98.00000000000001" text-anchor="end" fill="#111111">100</text><text x="6" y="164.66666666666666" text-anchor="start" fill="#111111">ベンチプレス</text><text x="494" y="164.66666666666666" text-anchor="end" fill="#111111">70</text><text x="6" y="231.33333333333334" text-anchor="start" fill="#111111">デッドリフト</text><text x="494" y="231.33333333333334" text-anchor="end" fill="#111111">120</text><rect x="0" y="32" width="500" height="228" fill="none" stroke="#333333"/><line x1="0" y1="60" x2="500" y2="60" stroke="#cccccc"/><line x1="0" y1="126.66666666666667" x2="500" y2="126.66666666666667" stroke="#cccccc"/><line x1="0" y1="193.33333333333334" x2="500" y2="193.33333333333334" stroke="#cccccc"/><line x1="0" y1="260" x2="500" y2="260" stroke="#cccccc"/><line x1="0" y1="32" x2="500" y2="32" stroke="#333333"/><line x1="0" y1="32" x2="0" y2="260" stroke="#cccccc"/><line x1="250" y1="32" x2="250" y2="260" stroke="#cccccc"/><line x1="500" y1="32" x2="500" y2="260" stroke="#cccccc"/></svg>
 
-折れ線グラフ(`POST /chart/line`):
+折れ線グラフ(`POST /chart/line`)。送ったリクエストはこちら。
+
+```json
+{
+  "title": "週間走行距離(例)",
+  "xLabel": "週",
+  "yLabel": "距離(km)",
+  "data": [
+    { "label": "1週目", "value": 10 },
+    { "label": "2週目", "value": 15 },
+    { "label": "3週目", "value": 12 },
+    { "label": "4週目", "value": 20 }
+  ],
+  "width": 500,
+  "height": 260
+}
+```
+
+返ってきたSVGをそのまま埋め込むとこうなります。
 
 <svg width="500" height="260" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg">
 <rect x="0" y="0" width="500" height="260" opacity="1" fill="#FFFFFF" stroke="none"/>
@@ -162,6 +196,33 @@ Lambda関数の中は「core(業務ロジック、HTTP非依存)→ adapter(HTTP
 </svg>
 
 どちらも数値は例として適当に入れたものですが、実際にAPIへリクエストを送って返ってきたSVGをそのまま貼り付けています。
+
+## 試してみる
+
+このAPIは公開していて、以下のエンドポイントとAPIキーでそのまま試せます。
+
+```
+POST https://ycdi9tb8p9.execute-api.ap-northeast-1.amazonaws.com/prod/table
+POST https://ycdi9tb8p9.execute-api.ap-northeast-1.amazonaws.com/prod/chart/bar
+POST https://ycdi9tb8p9.execute-api.ap-northeast-1.amazonaws.com/prod/chart/line
+```
+
+```bash
+curl -X POST "https://ycdi9tb8p9.execute-api.ap-northeast-1.amazonaws.com/prod/chart/line" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: 606636d2-245d-43d2-888a-1b1f4b75a69d" \
+  -d '{
+    "title": "週間走行距離(例)",
+    "xLabel": "週",
+    "yLabel": "距離(km)",
+    "data": [
+      { "label": "1週目", "value": 10 },
+      { "label": "2週目", "value": 15 }
+    ]
+  }'
+```
+
+レート制限(5リクエスト/秒、バースト10)をかけているので、負荷をかけるような使い方はご遠慮ください。
 
 ## これから
 
